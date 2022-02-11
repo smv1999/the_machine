@@ -4,3 +4,4 @@
 4. Get the current location using laptop's GPS - done
 5. Yellow for admin <-> White for other subjects - in progress
 6. Fetching details of the subject from the internet - to start
+7. Predicting emotions based on facial expressions

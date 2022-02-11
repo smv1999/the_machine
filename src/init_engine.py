@@ -74,4 +74,4 @@ coordinates = g.latlng
 location_data = str(geolocator.geocode(
     str(coordinates[0])+","+str(coordinates[1])))
 current_location = str(location_data.split(
-    ',')[7]) + str(location_data.split(',')[8]) + str(location_data.split(',')[10])
+    ',')[-4]) + str(location_data.split(',')[-3]) + str(location_data.split(',')[-1])

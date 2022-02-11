@@ -16,9 +16,6 @@ def intro_music():
 
 
 def start_core_engine():
-    t2 = Thread(target=(text_to_speech), args=("Hello World!",))
-    t2.setDaemon(True)
-    t2.start()
     while True:
 
         global frame
