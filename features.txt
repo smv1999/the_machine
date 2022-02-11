@@ -1,0 +1,6 @@
+1. Delete records older than some period - to start
+2. Send an sms when an anamoly is detected - to start
+3. get the google local weather - to start 
+4. Get the current location using laptop's GPS - done
+5. Yellow for admin <-> White for other subjects - in progress
+6. Fetching details of the subject from the internet - to start

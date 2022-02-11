@@ -1,0 +1,12 @@
+pip install cmake
+pip install opencv-python
+pip install SpeechRecognition
+pip install pyaudio
+pip install beautifulsoup4
+pip install google
+pip install pyttsx3
+pip install gTTS
+pip install pyglet
+pip install geocoder
+pip install geopy
+pip install emoji
