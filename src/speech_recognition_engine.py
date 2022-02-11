@@ -12,6 +12,8 @@ chunk_size = 1024
 
 r = sr.Recognizer()
 
+terminated = ["bye", "exit", "quit", "goodbye", "good bye", "see you later"]
+
 
 def real_time_speech(frame):
     ev_stop = Event()
@@ -28,7 +30,7 @@ def real_time_speech(frame):
             command = text.split()[0]
             query = text.split()[1:]
 
-            if command == "bye":
+            if text in terminated:
                 ev_stop.clear()
                 text_to_speech("Bye, see you later")
                 time.sleep(1)

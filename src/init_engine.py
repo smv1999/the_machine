@@ -25,7 +25,7 @@ if platform.system() == 'Linux':
 elif platform.system() == 'Windows':
     save_path = "V:\\Surveillance_System_Video_Footages\\"
 
-path = 'images'
+path = '../images'
 images = []
 classNames = []
 myList = os.listdir(path)
@@ -64,7 +64,7 @@ out = cv2.VideoWriter(
 
 voice_file_path = save_path + "voice.mp3"
 
-intro_file_path = "intro.mp3"
+intro_file_path = "../music/intro.mp3"
 
 
 geolocator = Nominatim(user_agent="geoapiExercises")
