@@ -6,6 +6,7 @@ import face_recognition
 import geocoder
 from geopy.geocoders import Nominatim
 from internet_utility_engine import *
+from fer import FER
 
 
 def find_encodings(images):
@@ -68,6 +69,7 @@ voice_file_path = save_path + "voice.mp3"
 
 intro_file_path = "../music/intro.mp3"
 
+detector = FER()
 
 geolocator = Nominatim(user_agent="the_machine")
 

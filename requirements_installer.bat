@@ -10,3 +10,5 @@ pip install geocoder
 pip install geopy
 pip install selenium
 pip install playsound
+pip install tensorflow
+pip install fer

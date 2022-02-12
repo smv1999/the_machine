@@ -3,14 +3,13 @@ Done
 get the current local weather 
 Get the current location using laptop's GPS / Ip address
 Yellow for admin <-> White for other subjects
+Predicting emotions based on facial expressions
 
 To Start 
 ========
 Delete records older than some period
 Send an sms when an anamoly is detected
 Fetching details of the subject from the internet
-Predicting emotions based on facial expressions
 
 In Progress 
 ===========
-Select a correct resolution size

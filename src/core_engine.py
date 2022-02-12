@@ -54,6 +54,9 @@ def start_core_engine():
                     cv2.putText(live_frame, "Subject: " + classNames[matchIndex], (faceLoc[3], faceLoc[0]-10),
                                 cv2.FONT_HERSHEY_SIMPLEX, 0.9, (255, 255, 255), 2)
 
+        emotion, score = detector.top_emotion(frame)
+        print(emotion)
+
         current_time_frame = time.ctime()
         cv2.putText(frame, current_time_frame, (744, 680),
                     cv2.FONT_HERSHEY_DUPLEX, 0.7, (5, 5, 5), 2)

@@ -7,8 +7,9 @@ pip3 install beautifulsoup4
 pip3 install google
 sudo apt install espeak
 pip3 install gTTS
-pip3 install pyglet
 pip3 install geocoder
 pip3 install geopy
 chmod -w images
 pip3 install playsound
+pip3 install tensorflow
+pip3 install fer
