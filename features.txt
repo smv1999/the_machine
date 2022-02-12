@@ -10,7 +10,6 @@ Delete records older than some period
 Send an sms when an anamoly is detected
 Fetching details of the subject from the internet
 Predicting emotions based on facial expressions
-Get the pincode and base on that the location information
 
 In Progress 
 ===========

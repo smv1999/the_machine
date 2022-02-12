@@ -61,7 +61,7 @@ def start_core_engine():
         cv2.putText(frame, current_location, (30, 680),
                     cv2.FONT_HERSHEY_DUPLEX, 0.7, (5, 5, 5), 2)
 
-        cv2.putText(frame, weather_info[0][0] + " Deg C - " + weather_info[1], (780, 30),
+        cv2.putText(frame, weather_info[0][0:2] + " Deg C - " + weather_info[1], (780, 30),
                     cv2.FONT_HERSHEY_DUPLEX, 0.7, (5, 5, 5), 2)
 
         out.write(frame)
