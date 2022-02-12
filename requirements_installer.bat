@@ -6,7 +6,7 @@ pip install beautifulsoup4
 pip install google
 pip install pyttsx3
 pip install gTTS
-pip install pyglet
 pip install geocoder
 pip install geopy
-pip install emoji
+pip install selenium
+pip install playsound

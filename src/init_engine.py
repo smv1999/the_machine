@@ -5,6 +5,7 @@ import cv2
 import face_recognition
 import geocoder
 from geopy.geocoders import Nominatim
+from internet_utility_engine import *
 
 
 def find_encodings(images):
@@ -25,7 +26,8 @@ if platform.system() == 'Linux':
 elif platform.system() == 'Windows':
     save_path = "V:\\Surveillance_System_Video_Footages\\"
 
-path = '../images'
+# ../images
+path = '/home/smv1999/Documents/GitHub Projects/the_machine/images'
 images = []
 classNames = []
 myList = os.listdir(path)
@@ -67,7 +69,7 @@ voice_file_path = save_path + "voice.mp3"
 intro_file_path = "../music/intro.mp3"
 
 
-geolocator = Nominatim(user_agent="geoapiExercises")
+geolocator = Nominatim(user_agent="the_machine")
 
 g = geocoder.ip('me')
 coordinates = g.latlng
@@ -75,3 +77,5 @@ location_data = str(geolocator.geocode(
     str(coordinates[0])+","+str(coordinates[1])))
 current_location = str(location_data.split(
     ',')[-4]) + str(location_data.split(',')[-3]) + str(location_data.split(',')[-1])
+
+weather_info = get_weather_info(coordinates)

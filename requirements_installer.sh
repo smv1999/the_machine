@@ -10,4 +10,5 @@ pip3 install gTTS
 pip3 install pyglet
 pip3 install geocoder
 pip3 install geopy
-pip3 install emoji
+chmod -w images
+pip3 install playsound

@@ -1,10 +1,10 @@
 import speech_recognition as sr
 from gtts import gTTS
-import pyglet
 from threading import *
 from init_engine import *
 import time
 from internet_utility_engine import *
+from playsound import *
 
 sample_rate = 48000
 
@@ -62,8 +62,8 @@ def real_time_speech(frame):
 def text_to_speech(text):
     tts = gTTS(text, lang="en", tld="co.uk")
     tts.save(voice_file_path)
-    voice = pyglet.media.load(voice_file_path, streaming=False)
-    voice.play()
+
+    playsound(voice_file_path)
 
     # time.sleep(voice.duration)  # prevent from killing
     os.remove(voice_file_path)  # remove temporary file
