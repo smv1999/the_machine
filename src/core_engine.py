@@ -13,6 +13,11 @@ def intro_music():
     ev_stop.clear()
 
 
+def display_text(text, coordinates):
+    cv2.putText(frame, text, coordinates,
+                cv2.FONT_HERSHEY_DUPLEX, 0.7, (5, 5, 5), 2)
+
+
 def start_core_engine():
     while True:
 
@@ -55,20 +60,16 @@ def start_core_engine():
         # to be used later
         emotions_list.append(emotion)
 
-        # cv2.imwrite("../frame.jpg", frame)
-
-        cv2.putText(frame, 'CAMERA 0', (30, 30),
-                    cv2.FONT_HERSHEY_DUPLEX, 0.7, (5, 5, 5), 2)
-
         current_time_frame = time.ctime()
-        cv2.putText(frame, current_time_frame, (744, 680),
-                    cv2.FONT_HERSHEY_DUPLEX, 0.7, (5, 5, 5), 2)
 
-        cv2.putText(frame, current_location, (30, 680),
-                    cv2.FONT_HERSHEY_DUPLEX, 0.7, (5, 5, 5), 2)
+        display_text('CAMERA 0', (30, 30))
 
-        cv2.putText(frame, weather_info[0][0:2] + " Deg C - " + weather_info[1], (780, 30),
-                    cv2.FONT_HERSHEY_DUPLEX, 0.7, (5, 5, 5), 2)
+        display_text(current_time_frame, (744, 680))
+
+        display_text(current_location, (30, 680))
+
+        display_text(weather_info[0][0:2] +
+                     " Deg C - " + weather_info[1], (780, 30))
 
         out.write(frame)
 

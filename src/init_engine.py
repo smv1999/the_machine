@@ -10,6 +10,7 @@ from fer import FER
 from PIL import Image
 import pytesseract
 import numpy as np
+from pytesseract import Output
 
 
 def find_encodings(images):
@@ -47,6 +48,8 @@ encodeListKnown = find_encodings(images)
 
 cap = cv2.VideoCapture(0)
 
+cap.set(cv2.CAP_PROP_BUFFERSIZE, 1)
+
 face_cascade = cv2.CascadeClassifier(
     cv2.data.haarcascades + "haarcascade_frontalface_default.xml")
 body_cascade = cv2.CascadeClassifier(
@@ -72,7 +75,11 @@ voice_file_path = save_path + "voice.mp3"
 
 intro_file_path = "../music/intro.mp3"
 
+image_ocr_file_path = "../ocr_img.jpg"
+
 detector = FER()
+
+emotions_list = []
 
 geolocator = Nominatim(user_agent="the_machine")
 
@@ -85,5 +92,3 @@ current_location = str(location_data_list[-4]) + str(
     location_data_list[-3]) + str(location_data_list[-1].split('/')[1])
 
 weather_info = get_weather_info(coordinates)
-
-emotions_list = []
