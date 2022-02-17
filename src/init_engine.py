@@ -7,6 +7,9 @@ import geocoder
 from geopy.geocoders import Nominatim
 from internet_utility_engine import *
 from fer import FER
+from PIL import Image
+import pytesseract
+import numpy as np
 
 
 def find_encodings(images):
@@ -77,7 +80,10 @@ g = geocoder.ip('me')
 coordinates = g.latlng
 location_data = str(geolocator.geocode(
     str(coordinates[0])+","+str(coordinates[1])))
-current_location = str(location_data.split(
-    ',')[-4]) + str(location_data.split(',')[-3]) + str(location_data.split(',')[-1])
+location_data_list = location_data.split(",")
+current_location = str(location_data_list[-4]) + str(
+    location_data_list[-3]) + str(location_data_list[-1].split('/')[1])
 
 weather_info = get_weather_info(coordinates)
+
+emotions_list = []

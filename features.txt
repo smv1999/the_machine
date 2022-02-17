@@ -8,8 +8,9 @@ Predicting emotions based on facial expressions
 To Start 
 ========
 Delete records older than some period
-Send an sms when an anamoly is detected
+Send an sms / alert when an anamoly is detected
 Fetching details of the subject from the internet
 
 In Progress 
 ===========
+OCR 

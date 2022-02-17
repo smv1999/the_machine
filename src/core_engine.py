@@ -1,4 +1,3 @@
-import numpy as np
 from init_engine import *
 from internet_utility_engine import *
 from speech_recognition_engine import *
@@ -29,9 +28,6 @@ def start_core_engine():
         faces = face_cascade.detectMultiScale(gray, 1.3, 5)
         bodies = body_cascade.detectMultiScale(gray, 1.3, 5)
 
-        cv2.putText(frame, 'CAMERA 0', (30, 30),
-                    cv2.FONT_HERSHEY_DUPLEX, 0.7, (5, 5, 5), 2)
-
         # all faces in the frame
         faces_cur_frame = face_recognition.face_locations(frame)
         # encodings of all faces in the frame
@@ -55,7 +51,14 @@ def start_core_engine():
                                 cv2.FONT_HERSHEY_SIMPLEX, 0.9, (255, 255, 255), 2)
 
         emotion, score = detector.top_emotion(frame)
-        print(emotion)
+
+        # to be used later
+        emotions_list.append(emotion)
+
+        # cv2.imwrite("../frame.jpg", frame)
+
+        cv2.putText(frame, 'CAMERA 0', (30, 30),
+                    cv2.FONT_HERSHEY_DUPLEX, 0.7, (5, 5, 5), 2)
 
         current_time_frame = time.ctime()
         cv2.putText(frame, current_time_frame, (744, 680),

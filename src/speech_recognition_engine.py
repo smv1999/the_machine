@@ -12,7 +12,13 @@ chunk_size = 1024
 
 r = sr.Recognizer()
 
-terminated = ["bye", "exit", "quit", "goodbye", "good bye", "see you later"]
+terminate_session_exp = ["bye", "exit", "quit",
+                         "goodbye", "good bye", "see you later"]
+
+image_ocr_exp = ["perform ocr on this image",
+                 "perform ocr on this", "ocr on this image", "ocr"]
+
+image_ocr_file_path = "../ocr_img.jpg"
 
 
 def real_time_speech(frame):
@@ -30,13 +36,11 @@ def real_time_speech(frame):
             command = text.split()[0]
             query = text.split()[1:]
 
-            if text in terminated:
+            if text in terminate_session_exp:
                 ev_stop.clear()
                 text_to_speech("Bye, see you later")
-                time.sleep(1)
+                # time.sleep(1)
                 out.write(frame)
-
-                out.release()
 
                 out.release()
                 cap.release()
@@ -51,6 +55,12 @@ def real_time_speech(frame):
                 text_to_speech("Gathering fetched results")
 
                 search_google(query)
+            if text in image_ocr_exp:
+                cv2.imwrite("../frame.jpg", frame)
+                time.sleep(1)
+                img = np.array(Image.open(image_ocr_file_path))
+                text = pytesseract.image_to_string(img)
+                print(text)
 
         except sr.UnknownValueError:
             print("Google Speech Recognition could not understand audio")

@@ -13,3 +13,6 @@ chmod -w images
 pip3 install playsound
 pip3 install tensorflow
 pip3 install fer
+sudo apt-get install tesseract-ocr
+pip3 install pytesseract
+pip3 install Pillow

@@ -12,3 +12,5 @@ pip install selenium
 pip install playsound
 pip install tensorflow
 pip install fer
+pip install pytesseract
+pip install Pillow
