@@ -9,4 +9,4 @@ The Machine is everywhere, watching us with ten thousand eyes, listening with a 
 
 Meet The Machine !
 
-This project is inspired by "The Machine" shown in the series "Person of Interest". The idea is to create a mini-clone of the machine. 
+This project is inspired by "The Machine" shown in the series "Person of Interest". The idea is to create a miniature clone of the machine. 
